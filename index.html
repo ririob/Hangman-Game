@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hangman Game</title>
-    
-    <!-- Using Bootstrap -->
+    <title>Hangman | Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     
@@ -14,82 +13,48 @@
 <body>
 
     <!-- Bootstrap container to hold the head -->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <!-- Jumbotron to hold the title -->
-                <div class="jumbotron">
-                    <div class="container">
-                        <h1>Hangman Game<small>(Guess the names of Superstar Artists!)</small></h1>
-                        <h4>Press any key to start...</h4>
-                        <h5>NOTE:<small>We want their birthname!</small></h5>
-                        <img src="assets/images/drake.jpg" alt="drake" class="img-thumbnail" width="140">
-                        <img src="assets/images/The_Weeknd.jpg" alt="weeknd" class="img-thumbnail" width="200">
-                        <img src="assets/images/IMG_1078.JPG" alt="drakefuturee" class="img-thumbnail" width="260">
-                        <img src="assets/images/wizkid.jpg" alt="wizkid" class="img-thumbnail" width="120">
-                        <img src="assets/images/tiwa.jpg" alt="savage" class="img-thumbnail" width="180">
-                    </div>
-                </div
-            </div>
+      <!-- Nav tag -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="masterhead">
+        <div class="container">
+            <a class="navbar-brand" id = "logo" href="index.html">Games</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+            </button>
         </div>
-
-        <!-- Game layouts created here. cards are used to hold various sections. -->
-        <!-- First set the outline to rows and columns -->
-        
-        <div class="col-md-12">
-            <!-- First card: Holds the word to guess (blanks and guessed word) -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title"><strong>Name to Guess</strong></h3>
+    </nav>
+    <!-- Wrapper to push footer to the bottom -->
+    <div class="wrapper">
+        <!-- Container for content -->
+        <!-- This div inherit properties of both "#main-container" id
+        and ".container" class  -->
+        <div class="container" id = "main-container">
+            <section>
+                <h1>HANGMAN: Guess Superstars Names!</h1>
+                <div class="row main-row">
+                    <div class="col border text-center" id="picture">
+                        <img  id= "image" src = "assets/images/likedmage.jpg" alt = "work-picture">
+                        <span id = "rapper"><p>Hangman</p></span>
+                    </div>
+                    <div class="col border text-center game-panel" id = "game">
+                        <!-- game display -->
+                    </div>
                 </div>
-                <div class="card-body">
-                    <!-- This h3 section called wordblanks is what will be replaced with letters as the users guesses. Particulated attention to the id called **WORDBLANKS**. It will be referenced in the javascript. -->
-                    <h3 id="word-blanks">_ _ _ _ _ _ _ _ _</h3>
-                </div>
-            </div>
-
-            <!-- Second card: Holds the list of wrong users guesses. -->
-            <div class="card">
-                <div class="card-body">
-                        
-                    <!-- This span section called userGuesses is where the wrong guesses will be dumped .
-                        Particulated attention to the id called **userGuesses**. It willed be referenced in the Javascript. -->
-                    <strong>Wrong Guesses: </strong> <span id="wrong-guesses"></span>
-                </div>
-            </div>
-
-            <!-- Third card: Holds the number of wrong guesses -->
-            <div class="card">
-                <div class="card-body">
-
-                    <!-- This span section called guessesLeft is where the number of guesses left will be dumped. attention to the id called **guessesLeft** it will be referenced in the javascript -->
-                    <strong>Guesses Left: </strong><span id="guesses-left"></span>
-                </div>
-            </div>
-
-            <!-- Fourth card: Holds the number of wins -->
-            <div class="card">
-                <div class="card-body">
-
-                    <!-- this span called winCounter is where the number of wins will be dumped attention to the id called **winCounter** it will be referenced in the javascript -->
-                    <strong>Wins: </strong> <span id="win-counter"></span>
-                </div>
-            </div>
-
-            <!-- Fifth card: Holds the number of losses-->
-            <div class="card">
-                <div class="card-body">
-
-                    <!-- this span called lossCounter is where the number of losses will be dumped attention to the id called **lossCounter** it will be referenced in the javascript -->
-                    <strong>Losses: </strong> <span id="loss-counter"></span>
-                </div>
-            </div>
+            </section>
         </div>
     </div>
+    <footer>
+        <div class="container">
+            Copyright &copy;2018 Richard Obaseki
+        </div>
+    </footer>  
+
+   
 
    
     <!-- Adds a link to the javascript file. Loaded at the bottom so it waits for the HTML cntent to display first. If this is loaded at the top it will crash, because the HTML IDs wont't exist yet. -->
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="assets/javascript/game.js"></script>
     
 </body>
